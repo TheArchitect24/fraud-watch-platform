@@ -211,6 +211,7 @@ services:
     volumes:
       - ./phase3-transforms/airflow/dags:/opt/airflow/dags
       - airflow-logs:/opt/airflow/logs
+      - ./phase3-transforms/dbt_project:/opt/dbt
     networks: [serving-net, processing-net]
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]

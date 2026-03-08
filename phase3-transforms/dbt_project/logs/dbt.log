@@ -2979,3 +2979,1648 @@ having count(*) > 1
 [0m20:07:22.680634 [debug] [MainThread]: Command `dbt test` succeeded at 20:07:22.680286 after 67.17 seconds
 [0m20:07:22.681401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a7f8bfe97d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a7f8bfe8d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a7f8beb1fd0>]}
 [0m20:07:22.682399 [debug] [MainThread]: Flushing usage events
+[0m20:42:42.383564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e7a3a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612f9790d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e7a23d0>]}
+
+
+============================== 20:42:42.419091 | 19adddee-89dc-475e-840e-f0457fc53f9b ==============================
+[0m20:42:42.419091 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:42:42.421240 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed --profiles-dir /opt/dbt --project-dir /opt/dbt', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:42:42.779697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e7f55d0>]}
+[0m20:42:42.849882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612faf87d0>]}
+[0m20:42:42.851149 [info ] [MainThread]: Registered adapter: trino=1.7.1
+[0m20:42:42.862553 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m20:42:42.938521 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:42:42.939289 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:42:42.947309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e518690>]}
+[0m20:42:42.968718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e7f7510>]}
+[0m20:42:42.969446 [info ] [MainThread]: Found 6 models, 13 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 422 macros, 0 groups, 0 semantic models
+[0m20:42:42.969976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e58c110>]}
+[0m20:42:42.972378 [info ] [MainThread]: 
+[0m20:42:42.973669 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m20:42:42.976203 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta'
+[0m20:42:43.001146 [debug] [ThreadPool]: Using trino connection "list_delta"
+[0m20:42:43.001843 [debug] [ThreadPool]: On list_delta: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta"} */
+
+    select schema_name
+    from "delta".INFORMATION_SCHEMA.schemata
+[0m20:42:43.002355 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:44.697815 [debug] [ThreadPool]: SQL status: SUCCESS in 2.0 seconds
+[0m20:42:44.699732 [debug] [ThreadPool]: On list_delta: Close
+[0m20:42:44.702833 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_delta, now list_delta_bronze_marts)
+[0m20:42:44.704300 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_staging'
+[0m20:42:44.711319 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze'
+[0m20:42:44.721884 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_staging"
+[0m20:42:44.716988 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_marts"
+[0m20:42:44.724149 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_intermediate'
+[0m20:42:44.729317 [debug] [ThreadPool]: Using trino connection "list_delta_bronze"
+[0m20:42:44.730320 [debug] [ThreadPool]: On list_delta_bronze_staging: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_staging"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_staging') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_staging'
+[0m20:42:44.731059 [debug] [ThreadPool]: On list_delta_bronze_marts: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_marts"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_marts') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_marts'
+[0m20:42:44.735966 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_intermediate"
+[0m20:42:44.736720 [debug] [ThreadPool]: On list_delta_bronze: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+[0m20:42:44.737406 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:44.738047 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:42:44.738794 [debug] [ThreadPool]: On list_delta_bronze_intermediate: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_intermediate"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_intermediate') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_intermediate'
+[0m20:42:44.739443 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:44.743906 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:45.905284 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:45.907714 [debug] [ThreadPool]: On list_delta_bronze_marts: ROLLBACK
+[0m20:42:45.909180 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:45.909829 [debug] [ThreadPool]: On list_delta_bronze_marts: Close
+[0m20:42:45.911016 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:45.914341 [debug] [ThreadPool]: On list_delta_bronze_intermediate: ROLLBACK
+[0m20:42:45.915471 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:45.918113 [debug] [ThreadPool]: On list_delta_bronze: ROLLBACK
+[0m20:42:45.919842 [debug] [ThreadPool]: On list_delta_bronze_intermediate: Close
+[0m20:42:45.921448 [debug] [ThreadPool]: On list_delta_bronze_staging: ROLLBACK
+[0m20:42:45.922201 [debug] [ThreadPool]: On list_delta_bronze: Close
+[0m20:42:45.923695 [debug] [ThreadPool]: On list_delta_bronze_staging: Close
+[0m20:42:45.928373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612f3ec450>]}
+[0m20:42:45.929156 [debug] [MainThread]: On master: COMMIT
+[0m20:42:45.930050 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:42:45.930633 [info ] [MainThread]: 
+[0m20:42:45.942466 [debug] [Thread-1 (]: Began running node seed.fraud_platform.merchants
+[0m20:42:45.943501 [info ] [Thread-1 (]: 1 of 1 START seed file bronze.merchants ........................................ [RUN]
+[0m20:42:45.944687 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_delta_bronze_staging, now seed.fraud_platform.merchants)
+[0m20:42:45.945311 [debug] [Thread-1 (]: Began compiling node seed.fraud_platform.merchants
+[0m20:42:45.945979 [debug] [Thread-1 (]: Timing info for seed.fraud_platform.merchants (compile): 20:42:45.945656 => 20:42:45.945660
+[0m20:42:45.946525 [debug] [Thread-1 (]: Began executing node seed.fraud_platform.merchants
+[0m20:42:45.986551 [debug] [Thread-1 (]: Applying DROP to: "delta"."bronze"."merchants"
+[0m20:42:45.990262 [debug] [Thread-1 (]: Using trino connection "seed.fraud_platform.merchants"
+[0m20:42:45.991001 [debug] [Thread-1 (]: On seed.fraud_platform.merchants: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "seed.fraud_platform.merchants"} */
+
+    drop table if exists "delta"."bronze"."merchants"
+[0m20:42:45.991636 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:42:46.067980 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:42:46.080791 [debug] [Thread-1 (]: Using trino connection "seed.fraud_platform.merchants"
+[0m20:42:46.081534 [debug] [Thread-1 (]: On seed.fraud_platform.merchants: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "seed.fraud_platform.merchants"} */
+
+    create table "delta"."bronze"."merchants" ("merchant_id" VARCHAR,"merchant_name" VARCHAR,"category" VARCHAR,"risk_tier" VARCHAR)
+[0m20:42:46.148130 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:42:46.190802 [debug] [Thread-1 (]: Using trino connection "seed.fraud_platform.merchants"
+[0m20:42:46.191674 [debug] [Thread-1 (]: On seed.fraud_platform.merchants: insert into "delta"."bronze"."merchants" ("merchant_id", "merchant_name", "category", "risk_tier") values
+          (?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?)...
+[0m20:42:46.508338 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:42:46.516322 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.fraud_platform.merchants"
+[0m20:42:46.535015 [debug] [Thread-1 (]: On seed.fraud_platform.merchants: COMMIT
+[0m20:42:46.536713 [debug] [Thread-1 (]: Timing info for seed.fraud_platform.merchants (execute): 20:42:45.946850 => 20:42:46.536319
+[0m20:42:46.537283 [debug] [Thread-1 (]: On seed.fraud_platform.merchants: Close
+[0m20:42:46.538569 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '19adddee-89dc-475e-840e-f0457fc53f9b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e571810>]}
+[0m20:42:46.539415 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file bronze.merchants .................................... [[32mINSERT 10[0m in 0.59s]
+[0m20:42:46.540251 [debug] [Thread-1 (]: Finished running node seed.fraud_platform.merchants
+[0m20:42:46.543432 [debug] [MainThread]: On master: COMMIT
+[0m20:42:46.544274 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:42:46.544860 [debug] [MainThread]: Connection 'list_delta_bronze_marts' was properly closed.
+[0m20:42:46.545303 [debug] [MainThread]: Connection 'seed.fraud_platform.merchants' was properly closed.
+[0m20:42:46.545767 [debug] [MainThread]: Connection 'list_delta_bronze' was properly closed.
+[0m20:42:46.546153 [debug] [MainThread]: Connection 'list_delta_bronze_intermediate' was properly closed.
+[0m20:42:46.546685 [info ] [MainThread]: 
+[0m20:42:46.547190 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 3.57 seconds (3.57s).
+[0m20:42:46.548067 [debug] [MainThread]: Command end result
+[0m20:42:46.560589 [info ] [MainThread]: 
+[0m20:42:46.561262 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:42:46.561747 [info ] [MainThread]: 
+[0m20:42:46.562225 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m20:42:46.563437 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 4.358206, "process_user_time": 4.124212, "process_kernel_time": 0.44586, "process_mem_max_rss": "158944", "process_in_blocks": "1592", "process_out_blocks": "1928"}
+[0m20:42:46.564169 [debug] [MainThread]: Command `dbt seed` succeeded at 20:42:46.563974 after 4.36 seconds
+[0m20:42:46.564712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b612e7ed610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6132d22210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6132e93990>]}
+[0m20:42:46.565189 [debug] [MainThread]: Flushing usage events
+[0m20:42:54.269182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f7faa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f7fb650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f7f9410>]}
+
+
+============================== 20:42:54.275713 | 8fa188f4-29ee-481f-90b7-904bb8199f7e ==============================
+[0m20:42:54.275713 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:42:54.276464 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/opt/dbt', 'log_path': '/opt/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --select staging --profiles-dir /opt/dbt --project-dir /opt/dbt', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:42:54.537341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f7fbf50>]}
+[0m20:42:54.623737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f7e8b50>]}
+[0m20:42:54.625067 [info ] [MainThread]: Registered adapter: trino=1.7.1
+[0m20:42:54.635347 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m20:42:54.670821 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:42:54.671663 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:42:54.680526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f739f50>]}
+[0m20:42:54.703007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f4a3e10>]}
+[0m20:42:54.703811 [info ] [MainThread]: Found 6 models, 13 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 422 macros, 0 groups, 0 semantic models
+[0m20:42:54.704471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d5903602d0>]}
+[0m20:42:54.706563 [info ] [MainThread]: 
+[0m20:42:54.707587 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m20:42:54.709124 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta'
+[0m20:42:54.727720 [debug] [ThreadPool]: Using trino connection "list_delta"
+[0m20:42:54.728353 [debug] [ThreadPool]: On list_delta: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta"} */
+
+    select schema_name
+    from "delta".INFORMATION_SCHEMA.schemata
+[0m20:42:54.728821 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:55.338189 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:55.340144 [debug] [ThreadPool]: On list_delta: Close
+[0m20:42:55.342920 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_delta, now list_delta_bronze)
+[0m20:42:55.344245 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_intermediate'
+[0m20:42:55.345462 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_marts'
+[0m20:42:55.355380 [debug] [ThreadPool]: Using trino connection "list_delta_bronze"
+[0m20:42:55.356665 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_staging'
+[0m20:42:55.361946 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_intermediate"
+[0m20:42:55.366905 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_marts"
+[0m20:42:55.367724 [debug] [ThreadPool]: On list_delta_bronze: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+[0m20:42:55.372418 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_staging"
+[0m20:42:55.373053 [debug] [ThreadPool]: On list_delta_bronze_intermediate: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_intermediate"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_intermediate') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_intermediate'
+[0m20:42:55.373823 [debug] [ThreadPool]: On list_delta_bronze_marts: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_marts"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_marts') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_marts'
+[0m20:42:55.374442 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:42:55.375124 [debug] [ThreadPool]: On list_delta_bronze_staging: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_staging"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_staging') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_staging'
+[0m20:42:55.375677 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:55.376356 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:55.378531 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:42:55.567459 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m20:42:55.571046 [debug] [ThreadPool]: On list_delta_bronze_staging: ROLLBACK
+[0m20:42:55.571907 [debug] [ThreadPool]: On list_delta_bronze_staging: Close
+[0m20:42:56.337467 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:56.339279 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:56.343932 [debug] [ThreadPool]: On list_delta_bronze: ROLLBACK
+[0m20:42:56.347715 [debug] [ThreadPool]: On list_delta_bronze_intermediate: ROLLBACK
+[0m20:42:56.351221 [debug] [ThreadPool]: On list_delta_bronze: Close
+[0m20:42:56.352308 [debug] [ThreadPool]: On list_delta_bronze_intermediate: Close
+[0m20:42:56.360916 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:42:56.364381 [debug] [ThreadPool]: On list_delta_bronze_marts: ROLLBACK
+[0m20:42:56.365169 [debug] [ThreadPool]: On list_delta_bronze_marts: Close
+[0m20:42:56.369176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f5a4510>]}
+[0m20:42:56.370116 [debug] [MainThread]: On master: COMMIT
+[0m20:42:56.371286 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:42:56.371981 [info ] [MainThread]: 
+[0m20:42:56.386585 [debug] [Thread-1 (]: Began running node model.fraud_platform.stg_transactions
+[0m20:42:56.387897 [info ] [Thread-1 (]: 1 of 1 START sql view model bronze_staging.stg_transactions .................... [RUN]
+[0m20:42:56.389523 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_delta_bronze_marts, now model.fraud_platform.stg_transactions)
+[0m20:42:56.390319 [debug] [Thread-1 (]: Began compiling node model.fraud_platform.stg_transactions
+[0m20:42:56.395623 [debug] [Thread-1 (]: Writing injected SQL for node "model.fraud_platform.stg_transactions"
+[0m20:42:56.397231 [debug] [Thread-1 (]: Timing info for model.fraud_platform.stg_transactions (compile): 20:42:56.390767 => 20:42:56.396693
+[0m20:42:56.398003 [debug] [Thread-1 (]: Began executing node model.fraud_platform.stg_transactions
+[0m20:42:56.435118 [debug] [Thread-1 (]: Writing runtime sql for node "model.fraud_platform.stg_transactions"
+[0m20:42:56.442775 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.stg_transactions"
+[0m20:42:56.443629 [debug] [Thread-1 (]: On model.fraud_platform.stg_transactions: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.stg_transactions"} */
+
+  create or replace view
+    "delta"."bronze_staging"."stg_transactions"
+  security definer
+  as
+    -- Minimal staging: type casts, renames, source filter only.
+-- No business logic here.
+
+with source as (
+    select * from "delta"."bronze"."transactions"
+),
+
+typed as (
+    select
+        transaction_id,
+        user_id,
+        cast(amount as decimal(18, 2))      as amount,
+        upper(currency)                     as currency,
+        merchant_id,
+        lower(trim(merchant_name))          as merchant_name,
+        upper(country)                      as country,
+        city,
+        device_id,
+        device_type,
+        from_unixtime(event_time / 1000)    as event_at,
+        cast(is_international as boolean)   as is_international,
+        date(from_unixtime(event_time / 1000)) as event_date,
+        loaded_at
+    from source
+    where transaction_id is not null
+      and amount > 0
+)
+
+select * from typed
+  
+[0m20:42:56.444294 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:42:56.565824 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:42:56.592753 [debug] [Thread-1 (]: Timing info for model.fraud_platform.stg_transactions (execute): 20:42:56.398489 => 20:42:56.592335
+[0m20:42:56.593510 [debug] [Thread-1 (]: On model.fraud_platform.stg_transactions: ROLLBACK
+[0m20:42:56.594101 [debug] [Thread-1 (]: On model.fraud_platform.stg_transactions: Close
+[0m20:42:56.595543 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8fa188f4-29ee-481f-90b7-904bb8199f7e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f2a5310>]}
+[0m20:42:56.596572 [info ] [Thread-1 (]: 1 of 1 OK created sql view model bronze_staging.stg_transactions ............... [[32mSUCCESS[0m in 0.21s]
+[0m20:42:56.597524 [debug] [Thread-1 (]: Finished running node model.fraud_platform.stg_transactions
+[0m20:42:56.601505 [debug] [MainThread]: On master: COMMIT
+[0m20:42:56.602599 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:42:56.603151 [debug] [MainThread]: Connection 'list_delta_bronze' was properly closed.
+[0m20:42:56.603629 [debug] [MainThread]: Connection 'list_delta_bronze_intermediate' was properly closed.
+[0m20:42:56.604196 [debug] [MainThread]: Connection 'model.fraud_platform.stg_transactions' was properly closed.
+[0m20:42:56.604736 [debug] [MainThread]: Connection 'list_delta_bronze_staging' was properly closed.
+[0m20:42:56.605292 [info ] [MainThread]: 
+[0m20:42:56.606036 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.90 seconds (1.90s).
+[0m20:42:56.607363 [debug] [MainThread]: Command end result
+[0m20:42:56.622926 [info ] [MainThread]: 
+[0m20:42:56.623865 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:42:56.624815 [info ] [MainThread]: 
+[0m20:42:56.625438 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m20:42:56.626822 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.4022193, "process_user_time": 3.346109, "process_kernel_time": 0.388423, "process_mem_max_rss": "158952", "process_out_blocks": "1920", "process_in_blocks": "0"}
+[0m20:42:56.627627 [debug] [MainThread]: Command `dbt run` succeeded at 20:42:56.627428 after 2.40 seconds
+[0m20:42:56.628300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d5903666d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d58f959410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71d593e8fb50>]}
+[0m20:42:56.628925 [debug] [MainThread]: Flushing usage events
+[0m20:43:04.200950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e655e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e61ad50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e66a0d0>]}
+
+
+============================== 20:43:04.207923 | 4ab61144-6dca-4b8a-855d-80ace839e6e5 ==============================
+[0m20:43:04.207923 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:43:04.208817 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/opt/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select intermediate --profiles-dir /opt/dbt --project-dir /opt/dbt', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:43:04.421618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e668e90>]}
+[0m20:43:04.485694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053eaca2d0>]}
+[0m20:43:04.486728 [info ] [MainThread]: Registered adapter: trino=1.7.1
+[0m20:43:04.495653 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m20:43:04.525893 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:43:04.526678 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:43:04.538622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e6b5990>]}
+[0m20:43:04.562953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e41c090>]}
+[0m20:43:04.563857 [info ] [MainThread]: Found 6 models, 13 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 422 macros, 0 groups, 0 semantic models
+[0m20:43:04.564574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e489150>]}
+[0m20:43:04.566952 [info ] [MainThread]: 
+[0m20:43:04.568170 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m20:43:04.570278 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta'
+[0m20:43:04.592457 [debug] [ThreadPool]: Using trino connection "list_delta"
+[0m20:43:04.593177 [debug] [ThreadPool]: On list_delta: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta"} */
+
+    select schema_name
+    from "delta".INFORMATION_SCHEMA.schemata
+[0m20:43:04.593687 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:05.184060 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:05.185683 [debug] [ThreadPool]: On list_delta: Close
+[0m20:43:05.188234 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_delta, now list_delta_bronze_intermediate)
+[0m20:43:05.189531 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_staging'
+[0m20:43:05.196196 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze'
+[0m20:43:05.199213 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_intermediate"
+[0m20:43:05.200314 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_marts'
+[0m20:43:05.204212 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_staging"
+[0m20:43:05.208248 [debug] [ThreadPool]: Using trino connection "list_delta_bronze"
+[0m20:43:05.208871 [debug] [ThreadPool]: On list_delta_bronze_intermediate: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_intermediate"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_intermediate') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_intermediate'
+[0m20:43:05.212614 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_marts"
+[0m20:43:05.213174 [debug] [ThreadPool]: On list_delta_bronze_staging: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_staging"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_staging') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_staging'
+[0m20:43:05.213728 [debug] [ThreadPool]: On list_delta_bronze: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+[0m20:43:05.214341 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:43:05.214899 [debug] [ThreadPool]: On list_delta_bronze_marts: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_marts"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_marts') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_marts'
+[0m20:43:05.215477 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:05.215908 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:05.217837 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:05.981218 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:05.982958 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:05.984374 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:05.987040 [debug] [ThreadPool]: On list_delta_bronze_intermediate: ROLLBACK
+[0m20:43:05.987941 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:05.989993 [debug] [ThreadPool]: On list_delta_bronze_staging: ROLLBACK
+[0m20:43:05.991727 [debug] [ThreadPool]: On list_delta_bronze_marts: ROLLBACK
+[0m20:43:05.992541 [debug] [ThreadPool]: On list_delta_bronze_intermediate: Close
+[0m20:43:05.994630 [debug] [ThreadPool]: On list_delta_bronze: ROLLBACK
+[0m20:43:05.995421 [debug] [ThreadPool]: On list_delta_bronze_staging: Close
+[0m20:43:05.996171 [debug] [ThreadPool]: On list_delta_bronze_marts: Close
+[0m20:43:05.998804 [debug] [ThreadPool]: On list_delta_bronze: Close
+[0m20:43:06.004730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e417e10>]}
+[0m20:43:06.005542 [debug] [MainThread]: On master: COMMIT
+[0m20:43:06.006516 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:43:06.007156 [info ] [MainThread]: 
+[0m20:43:06.018966 [debug] [Thread-1 (]: Began running node model.fraud_platform.int_transactions_enriched
+[0m20:43:06.019960 [info ] [Thread-1 (]: 1 of 2 START sql view model bronze_intermediate.int_transactions_enriched ...... [RUN]
+[0m20:43:06.020991 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_delta_bronze, now model.fraud_platform.int_transactions_enriched)
+[0m20:43:06.021570 [debug] [Thread-1 (]: Began compiling node model.fraud_platform.int_transactions_enriched
+[0m20:43:06.026051 [debug] [Thread-1 (]: Writing injected SQL for node "model.fraud_platform.int_transactions_enriched"
+[0m20:43:06.027111 [debug] [Thread-1 (]: Timing info for model.fraud_platform.int_transactions_enriched (compile): 20:43:06.021931 => 20:43:06.026779
+[0m20:43:06.027636 [debug] [Thread-1 (]: Began executing node model.fraud_platform.int_transactions_enriched
+[0m20:43:06.052673 [debug] [Thread-1 (]: Writing runtime sql for node "model.fraud_platform.int_transactions_enriched"
+[0m20:43:06.057039 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.int_transactions_enriched"
+[0m20:43:06.057667 [debug] [Thread-1 (]: On model.fraud_platform.int_transactions_enriched: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.int_transactions_enriched"} */
+
+  create or replace view
+    "delta"."bronze_intermediate"."int_transactions_enriched"
+  security definer
+  as
+    -- Silver: join merchant reference data, add risk classification flags.
+
+with txs as (
+    select * from "delta"."bronze_staging"."stg_transactions"
+),
+
+merchants as (
+    select * from "delta"."bronze"."merchants"
+),
+
+enriched as (
+    select
+        t.*,
+        coalesce(m.category, 'unknown')     as merchant_category,
+        coalesce(m.risk_tier, 'medium')     as merchant_risk_tier,
+        case
+            when t.amount > 2000            then 'high'
+            when t.amount > 500             then 'medium'
+            else                                 'low'
+        end                                 as amount_risk_tier,
+        case
+            when t.is_international
+             and t.amount > 500             then true
+            else                                 false
+        end                                 as is_high_risk_international
+    from txs t
+    left join merchants m on t.merchant_id = m.merchant_id
+)
+
+select * from enriched
+  
+[0m20:43:06.058138 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:06.159982 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:06.181167 [debug] [Thread-1 (]: Timing info for model.fraud_platform.int_transactions_enriched (execute): 20:43:06.027955 => 20:43:06.180853
+[0m20:43:06.181866 [debug] [Thread-1 (]: On model.fraud_platform.int_transactions_enriched: ROLLBACK
+[0m20:43:06.182471 [debug] [Thread-1 (]: On model.fraud_platform.int_transactions_enriched: Close
+[0m20:43:06.183734 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e0fbc10>]}
+[0m20:43:06.184746 [info ] [Thread-1 (]: 1 of 2 OK created sql view model bronze_intermediate.int_transactions_enriched . [[32mSUCCESS[0m in 0.16s]
+[0m20:43:06.185810 [debug] [Thread-1 (]: Finished running node model.fraud_platform.int_transactions_enriched
+[0m20:43:06.187648 [debug] [Thread-3 (]: Began running node model.fraud_platform.int_user_velocity
+[0m20:43:06.188588 [info ] [Thread-3 (]: 2 of 2 START sql view model bronze_intermediate.int_user_velocity .............. [RUN]
+[0m20:43:06.189732 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_delta_bronze_staging, now model.fraud_platform.int_user_velocity)
+[0m20:43:06.190333 [debug] [Thread-3 (]: Began compiling node model.fraud_platform.int_user_velocity
+[0m20:43:06.194270 [debug] [Thread-3 (]: Writing injected SQL for node "model.fraud_platform.int_user_velocity"
+[0m20:43:06.195498 [debug] [Thread-3 (]: Timing info for model.fraud_platform.int_user_velocity (compile): 20:43:06.190713 => 20:43:06.195140
+[0m20:43:06.196081 [debug] [Thread-3 (]: Began executing node model.fraud_platform.int_user_velocity
+[0m20:43:06.199717 [debug] [Thread-3 (]: Writing runtime sql for node "model.fraud_platform.int_user_velocity"
+[0m20:43:06.204789 [debug] [Thread-3 (]: Using trino connection "model.fraud_platform.int_user_velocity"
+[0m20:43:06.205438 [debug] [Thread-3 (]: On model.fraud_platform.int_user_velocity: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.int_user_velocity"} */
+
+  create or replace view
+    "delta"."bronze_intermediate"."int_user_velocity"
+  security definer
+  as
+    -- Rolling window velocity signals per user: tx count, amount stats, device/country spread.
+-- Lookback window is 30 days from the most recent event in the batch.
+
+with enriched as (
+    select * from "delta"."bronze_intermediate"."int_transactions_enriched"
+),
+
+windowed as (
+    select
+        user_id,
+        count(*)                                            as tx_count_30d,
+        avg(amount)                                         as avg_amount_30d,
+        stddev(amount)                                      as stddev_amount_30d,
+        max(amount)                                         as max_amount_30d,
+        count(distinct device_id)                           as unique_devices_30d,
+        count(distinct country)                             as unique_countries_30d,
+        sum(case when is_international then 1 else 0 end)   as intl_tx_count_30d,
+        sum(case when amount_risk_tier = 'high' then 1 else 0 end) as high_amount_count_30d,
+        max(event_at)                                       as last_tx_at
+    from enriched
+    where event_at >= current_timestamp - interval '30' day
+    group by user_id
+)
+
+select * from windowed
+  
+[0m20:43:06.206048 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m20:43:06.323748 [debug] [Thread-3 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:06.326885 [debug] [Thread-3 (]: Timing info for model.fraud_platform.int_user_velocity (execute): 20:43:06.196488 => 20:43:06.326550
+[0m20:43:06.327473 [debug] [Thread-3 (]: On model.fraud_platform.int_user_velocity: ROLLBACK
+[0m20:43:06.327975 [debug] [Thread-3 (]: On model.fraud_platform.int_user_velocity: Close
+[0m20:43:06.329284 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ab61144-6dca-4b8a-855d-80ace839e6e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e2e7150>]}
+[0m20:43:06.330144 [info ] [Thread-3 (]: 2 of 2 OK created sql view model bronze_intermediate.int_user_velocity ......... [[32mSUCCESS[0m in 0.14s]
+[0m20:43:06.330974 [debug] [Thread-3 (]: Finished running node model.fraud_platform.int_user_velocity
+[0m20:43:06.334120 [debug] [MainThread]: On master: COMMIT
+[0m20:43:06.334947 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:43:06.335430 [debug] [MainThread]: Connection 'list_delta_bronze_intermediate' was properly closed.
+[0m20:43:06.335815 [debug] [MainThread]: Connection 'model.fraud_platform.int_user_velocity' was properly closed.
+[0m20:43:06.336201 [debug] [MainThread]: Connection 'model.fraud_platform.int_transactions_enriched' was properly closed.
+[0m20:43:06.336659 [debug] [MainThread]: Connection 'list_delta_bronze_marts' was properly closed.
+[0m20:43:06.337181 [info ] [MainThread]: 
+[0m20:43:06.337659 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 1.77 seconds (1.77s).
+[0m20:43:06.338609 [debug] [MainThread]: Command end result
+[0m20:43:06.349609 [info ] [MainThread]: 
+[0m20:43:06.350208 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:43:06.350658 [info ] [MainThread]: 
+[0m20:43:06.351106 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m20:43:06.352297 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.1982384, "process_user_time": 3.197634, "process_kernel_time": 0.329694, "process_mem_max_rss": "158948", "process_out_blocks": "1936", "process_in_blocks": "0"}
+[0m20:43:06.352995 [debug] [MainThread]: Command `dbt run` succeeded at 20:43:06.352829 after 2.20 seconds
+[0m20:43:06.353512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e673350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73053e673550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x730542d37910>]}
+[0m20:43:06.354030 [debug] [MainThread]: Flushing usage events
+[0m20:43:11.192416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ee4bf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706fa280d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ee4b110>]}
+
+
+============================== 20:43:11.204070 | a46f5463-8d55-4bf8-a03d-be7fcf6f14ad ==============================
+[0m20:43:11.204070 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:43:11.205437 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --select marts --profiles-dir /opt/dbt --project-dir /opt/dbt', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m20:43:11.437467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ee56190>]}
+[0m20:43:11.525532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706f457210>]}
+[0m20:43:11.526819 [info ] [MainThread]: Registered adapter: trino=1.7.1
+[0m20:43:11.541006 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m20:43:11.595516 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:43:11.596770 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:43:11.607875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706eee4c50>]}
+[0m20:43:11.642899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ee00dd0>]}
+[0m20:43:11.644504 [info ] [MainThread]: Found 6 models, 13 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 422 macros, 0 groups, 0 semantic models
+[0m20:43:11.645760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ecbc9d0>]}
+[0m20:43:11.650026 [info ] [MainThread]: 
+[0m20:43:11.652447 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m20:43:11.655505 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta'
+[0m20:43:11.699589 [debug] [ThreadPool]: Using trino connection "list_delta"
+[0m20:43:11.701034 [debug] [ThreadPool]: On list_delta: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta"} */
+
+    select schema_name
+    from "delta".INFORMATION_SCHEMA.schemata
+[0m20:43:11.702259 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:13.078401 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:13.080551 [debug] [ThreadPool]: On list_delta: Close
+[0m20:43:13.084319 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_delta, now list_delta_bronze_marts)
+[0m20:43:13.086236 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze'
+[0m20:43:13.093221 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_intermediate'
+[0m20:43:13.100860 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_marts"
+[0m20:43:13.107124 [debug] [ThreadPool]: Using trino connection "list_delta_bronze"
+[0m20:43:13.108613 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_staging'
+[0m20:43:13.114882 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_intermediate"
+[0m20:43:13.115585 [debug] [ThreadPool]: On list_delta_bronze_marts: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_marts"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_marts') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_marts'
+[0m20:43:13.116441 [debug] [ThreadPool]: On list_delta_bronze: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+[0m20:43:13.122014 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_staging"
+[0m20:43:13.123023 [debug] [ThreadPool]: On list_delta_bronze_intermediate: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_intermediate"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_intermediate') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_intermediate'
+[0m20:43:13.123772 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:43:13.124539 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:13.125330 [debug] [ThreadPool]: On list_delta_bronze_staging: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_staging"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_staging') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_staging'
+[0m20:43:13.126075 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:13.131689 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:14.040696 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:14.042714 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:14.044231 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:14.046330 [debug] [ThreadPool]: On list_delta_bronze_marts: ROLLBACK
+[0m20:43:14.047550 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:14.049813 [debug] [ThreadPool]: On list_delta_bronze: ROLLBACK
+[0m20:43:14.051687 [debug] [ThreadPool]: On list_delta_bronze_intermediate: ROLLBACK
+[0m20:43:14.052479 [debug] [ThreadPool]: On list_delta_bronze_marts: Close
+[0m20:43:14.054541 [debug] [ThreadPool]: On list_delta_bronze_staging: ROLLBACK
+[0m20:43:14.055350 [debug] [ThreadPool]: On list_delta_bronze: Close
+[0m20:43:14.055963 [debug] [ThreadPool]: On list_delta_bronze_intermediate: Close
+[0m20:43:14.056793 [debug] [ThreadPool]: On list_delta_bronze_staging: Close
+[0m20:43:14.064318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ec8af90>]}
+[0m20:43:14.065091 [debug] [MainThread]: On master: COMMIT
+[0m20:43:14.066075 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:43:14.066810 [info ] [MainThread]: 
+[0m20:43:14.079359 [debug] [Thread-1 (]: Began running node model.fraud_platform.mart_fraud_features
+[0m20:43:14.080343 [debug] [Thread-2 (]: Began running node model.fraud_platform.mart_hourly_metrics
+[0m20:43:14.081239 [info ] [Thread-1 (]: 1 of 3 START sql incremental model bronze_marts.mart_fraud_features ............ [RUN]
+[0m20:43:14.082507 [info ] [Thread-2 (]: 2 of 3 START sql incremental model bronze_marts.mart_hourly_metrics ............ [RUN]
+[0m20:43:14.083903 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_delta_bronze_staging, now model.fraud_platform.mart_fraud_features)
+[0m20:43:14.085184 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_delta_bronze_intermediate, now model.fraud_platform.mart_hourly_metrics)
+[0m20:43:14.085985 [debug] [Thread-1 (]: Began compiling node model.fraud_platform.mart_fraud_features
+[0m20:43:14.086779 [debug] [Thread-2 (]: Began compiling node model.fraud_platform.mart_hourly_metrics
+[0m20:43:14.106146 [debug] [Thread-1 (]: Writing injected SQL for node "model.fraud_platform.mart_fraud_features"
+[0m20:43:14.107658 [debug] [Thread-2 (]: Writing injected SQL for node "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:14.109222 [debug] [Thread-1 (]: Timing info for model.fraud_platform.mart_fraud_features (compile): 20:43:14.088007 => 20:43:14.108827
+[0m20:43:14.109864 [debug] [Thread-1 (]: Began executing node model.fraud_platform.mart_fraud_features
+[0m20:43:14.127237 [debug] [Thread-2 (]: Timing info for model.fraud_platform.mart_hourly_metrics (compile): 20:43:14.098697 => 20:43:14.126485
+[0m20:43:14.147937 [debug] [Thread-2 (]: Began executing node model.fraud_platform.mart_hourly_metrics
+[0m20:43:14.201312 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:14.209081 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:14.210227 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+  create or replace view
+    "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+  security definer
+  as
+    -- Gold: user-level features for ML model training and serving.
+-- One row per user_id. Refreshed incrementally every 15 min via Airflow.
+
+
+
+with velocity as (
+    select * from "delta"."bronze_intermediate"."int_user_velocity"
+    
+    where last_tx_at > (select max(feature_updated_at) from "delta"."bronze_marts"."mart_fraud_features")
+    
+)
+
+select
+    user_id,
+    tx_count_30d,
+    avg_amount_30d,
+    stddev_amount_30d,
+    max_amount_30d,
+    unique_devices_30d,
+    unique_countries_30d,
+    intl_tx_count_30d,
+    high_amount_count_30d,
+    last_tx_at,
+    current_timestamp                   as feature_updated_at
+from velocity
+  
+[0m20:43:14.211404 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+  create or replace view
+    "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+  security definer
+  as
+    -- Gold: hour-bucketed pipeline metrics for operational dashboards.
+-- Incremental to avoid S3A directory-rename limitation with table materialization.
+
+
+
+with enriched as (
+    select * from "delta"."bronze_intermediate"."int_transactions_enriched"
+),
+
+hourly as (
+    select
+        date_trunc('hour', event_at)                        as hour_bucket,
+        count(*)                                            as tx_count,
+        sum(amount)                                         as total_amount,
+        avg(amount)                                         as avg_amount,
+        count(distinct user_id)                             as unique_users,
+        count(distinct merchant_id)                         as unique_merchants,
+        sum(case when is_international then 1 else 0 end)   as intl_count,
+        sum(case when amount_risk_tier = 'high' then 1 else 0 end) as high_risk_count,
+        -- fraud_rate placeholder: populated once labels table exists
+        cast(0.0 as double)                                 as fraud_rate
+    from enriched
+    group by 1
+)
+
+select * from hourly
+order by hour_bucket desc
+  
+[0m20:43:14.212355 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:14.213289 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:43:14.345446 [debug] [Thread-2 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:14.362816 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:14.363684 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+    describe "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+[0m20:43:14.375017 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:14.379927 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:14.381073 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+    describe "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+[0m20:43:15.770163 [debug] [Thread-1 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:15.775098 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:15.775783 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+    describe "delta"."bronze_marts"."mart_fraud_features"
+[0m20:43:15.816517 [debug] [Thread-2 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:15.821857 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:15.822615 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+    describe "delta"."bronze_marts"."mart_hourly_metrics"
+[0m20:43:17.015798 [debug] [Thread-1 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:17.037134 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:17.038929 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+    describe "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+[0m20:43:17.043820 [debug] [Thread-2 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:17.051870 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:17.055679 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+    describe "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+[0m20:43:18.414045 [debug] [Thread-1 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:18.415944 [debug] [Thread-2 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:18.421731 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:18.427118 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:18.428076 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+    describe "delta"."bronze_marts"."mart_fraud_features"
+[0m20:43:18.428980 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+    describe "delta"."bronze_marts"."mart_hourly_metrics"
+[0m20:43:19.674040 [debug] [Thread-1 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:19.675581 [debug] [Thread-2 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:19.694484 [debug] [Thread-1 (]: 
+    In "delta"."bronze_marts"."mart_fraud_features":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m20:43:19.697631 [debug] [Thread-2 (]: 
+    In "delta"."bronze_marts"."mart_hourly_metrics":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m20:43:19.717163 [debug] [Thread-1 (]: Writing runtime sql for node "model.fraud_platform.mart_fraud_features"
+[0m20:43:19.714331 [debug] [Thread-2 (]: Writing runtime sql for node "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:19.719954 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:19.720958 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+insert into "delta"."bronze_marts"."mart_fraud_features" ("user_id", "tx_count_30d", "avg_amount_30d", "stddev_amount_30d", "max_amount_30d", "unique_devices_30d", "unique_countries_30d", "intl_tx_count_30d", "high_amount_count_30d", "last_tx_at", "feature_updated_at")
+    (
+        select "user_id", "tx_count_30d", "avg_amount_30d", "stddev_amount_30d", "max_amount_30d", "unique_devices_30d", "unique_countries_30d", "intl_tx_count_30d", "high_amount_count_30d", "last_tx_at", "feature_updated_at"
+        from "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+    )
+[0m20:43:19.724365 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:19.726970 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+insert into "delta"."bronze_marts"."mart_hourly_metrics" ("hour_bucket", "tx_count", "total_amount", "avg_amount", "unique_users", "unique_merchants", "intl_count", "high_risk_count", "fraud_rate")
+    (
+        select "hour_bucket", "tx_count", "total_amount", "avg_amount", "unique_users", "unique_merchants", "intl_count", "high_risk_count", "fraud_rate"
+        from "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+    )
+[0m20:43:50.732134 [debug] [Thread-2 (]: SQL status: SUCCESS in 31.0 seconds
+[0m20:43:50.755048 [debug] [Thread-2 (]: Applying DROP to: "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+[0m20:43:50.760817 [debug] [Thread-2 (]: Using trino connection "model.fraud_platform.mart_hourly_metrics"
+[0m20:43:50.765193 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_hourly_metrics"} */
+
+    drop view if exists "delta"."bronze_marts"."mart_hourly_metrics__dbt_tmp"
+[0m20:43:50.770442 [debug] [Thread-1 (]: SQL status: SUCCESS in 31.0 seconds
+[0m20:43:50.781524 [debug] [Thread-1 (]: Applying DROP to: "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+[0m20:43:50.785179 [debug] [Thread-1 (]: Using trino connection "model.fraud_platform.mart_fraud_features"
+[0m20:43:50.786637 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_fraud_features"} */
+
+    drop view if exists "delta"."bronze_marts"."mart_fraud_features__dbt_tmp"
+[0m20:43:50.854476 [debug] [Thread-2 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:50.893535 [debug] [Thread-2 (]: Timing info for model.fraud_platform.mart_hourly_metrics (execute): 20:43:14.159577 => 20:43:50.892810
+[0m20:43:50.899345 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: ROLLBACK
+[0m20:43:50.901076 [debug] [Thread-2 (]: On model.fraud_platform.mart_hourly_metrics: Close
+[0m20:43:50.904176 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ebd0450>]}
+[0m20:43:50.908931 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:50.907382 [info ] [Thread-2 (]: 2 of 3 OK created sql incremental model bronze_marts.mart_hourly_metrics ....... [[32mSUCCESS[0m in 36.82s]
+[0m20:43:50.914545 [debug] [Thread-1 (]: Timing info for model.fraud_platform.mart_fraud_features (execute): 20:43:14.110403 => 20:43:50.914016
+[0m20:43:50.916235 [debug] [Thread-2 (]: Finished running node model.fraud_platform.mart_hourly_metrics
+[0m20:43:50.917688 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: ROLLBACK
+[0m20:43:50.919602 [debug] [Thread-1 (]: On model.fraud_platform.mart_fraud_features: Close
+[0m20:43:50.922634 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706eaf6850>]}
+[0m20:43:50.925012 [info ] [Thread-1 (]: 1 of 3 OK created sql incremental model bronze_marts.mart_fraud_features ....... [[32mSUCCESS[0m in 36.84s]
+[0m20:43:50.927465 [debug] [Thread-1 (]: Finished running node model.fraud_platform.mart_fraud_features
+[0m20:43:50.930456 [debug] [Thread-4 (]: Began running node model.fraud_platform.mart_user_risk_profiles
+[0m20:43:50.931787 [info ] [Thread-4 (]: 3 of 3 START sql incremental model bronze_marts.mart_user_risk_profiles ........ [RUN]
+[0m20:43:50.933774 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_delta_bronze_marts, now model.fraud_platform.mart_user_risk_profiles)
+[0m20:43:50.934780 [debug] [Thread-4 (]: Began compiling node model.fraud_platform.mart_user_risk_profiles
+[0m20:43:50.942461 [debug] [Thread-4 (]: Writing injected SQL for node "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:50.944873 [debug] [Thread-4 (]: Timing info for model.fraud_platform.mart_user_risk_profiles (compile): 20:43:50.935384 => 20:43:50.944059
+[0m20:43:50.945890 [debug] [Thread-4 (]: Began executing node model.fraud_platform.mart_user_risk_profiles
+[0m20:43:50.964851 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:50.966873 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+  create or replace view
+    "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+  security definer
+  as
+    -- Gold: composite risk score per user, combining velocity and merchant signals.
+-- Incremental to avoid S3A directory-rename limitation with table materialization.
+
+
+
+with features as (
+    select * from "delta"."bronze_marts"."mart_fraud_features"
+),
+
+risk as (
+    select
+        user_id,
+        tx_count_30d,
+        avg_amount_30d,
+        max_amount_30d,
+        unique_devices_30d,
+        unique_countries_30d,
+        intl_tx_count_30d,
+        high_amount_count_30d,
+        last_tx_at,
+        feature_updated_at,
+        -- Simple rule-based risk tier before ML model is available
+        case
+            when unique_countries_30d > 3
+              or unique_devices_30d > 5
+              or (intl_tx_count_30d / nullif(tx_count_30d, 0)) > 0.5
+              or high_amount_count_30d > 5  then 'high'
+            when unique_devices_30d > 2
+              or (intl_tx_count_30d / nullif(tx_count_30d, 0)) > 0.2
+              or high_amount_count_30d > 2  then 'medium'
+            else                                 'low'
+        end                             as risk_tier
+    from features
+)
+
+select * from risk
+  
+[0m20:43:50.968574 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:43:51.233124 [debug] [Thread-4 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:51.239126 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:51.240135 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+    describe "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+[0m20:43:54.281670 [debug] [Thread-4 (]: SQL status: SUCCESS in 3.0 seconds
+[0m20:43:54.290004 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:54.291228 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+    describe "delta"."bronze_marts"."mart_user_risk_profiles"
+[0m20:43:55.563741 [debug] [Thread-4 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:55.571256 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:55.572055 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+    describe "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+[0m20:43:56.436791 [debug] [Thread-4 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:56.539202 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:56.540054 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+    describe "delta"."bronze_marts"."mart_user_risk_profiles"
+[0m20:43:57.621528 [debug] [Thread-4 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:43:57.626360 [debug] [Thread-4 (]: 
+    In "delta"."bronze_marts"."mart_user_risk_profiles":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m20:43:57.628768 [debug] [Thread-4 (]: Writing runtime sql for node "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:57.631264 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:57.632004 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+insert into "delta"."bronze_marts"."mart_user_risk_profiles" ("user_id", "tx_count_30d", "avg_amount_30d", "max_amount_30d", "unique_devices_30d", "unique_countries_30d", "intl_tx_count_30d", "high_amount_count_30d", "last_tx_at", "feature_updated_at", "risk_tier")
+    (
+        select "user_id", "tx_count_30d", "avg_amount_30d", "max_amount_30d", "unique_devices_30d", "unique_countries_30d", "intl_tx_count_30d", "high_amount_count_30d", "last_tx_at", "feature_updated_at", "risk_tier"
+        from "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+    )
+[0m20:43:58.088746 [debug] [Thread-4 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:58.094197 [debug] [Thread-4 (]: Applying DROP to: "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+[0m20:43:58.095593 [debug] [Thread-4 (]: Using trino connection "model.fraud_platform.mart_user_risk_profiles"
+[0m20:43:58.096299 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "model.fraud_platform.mart_user_risk_profiles"} */
+
+    drop view if exists "delta"."bronze_marts"."mart_user_risk_profiles__dbt_tmp"
+[0m20:43:58.131612 [debug] [Thread-4 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:43:58.135221 [debug] [Thread-4 (]: Timing info for model.fraud_platform.mart_user_risk_profiles (execute): 20:43:50.946445 => 20:43:58.134888
+[0m20:43:58.135911 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: ROLLBACK
+[0m20:43:58.136625 [debug] [Thread-4 (]: On model.fraud_platform.mart_user_risk_profiles: Close
+[0m20:43:58.138049 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a46f5463-8d55-4bf8-a03d-be7fcf6f14ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706ea23110>]}
+[0m20:43:58.139025 [info ] [Thread-4 (]: 3 of 3 OK created sql incremental model bronze_marts.mart_user_risk_profiles ... [[32mSUCCESS[0m in 7.21s]
+[0m20:43:58.139947 [debug] [Thread-4 (]: Finished running node model.fraud_platform.mart_user_risk_profiles
+[0m20:43:58.143953 [debug] [MainThread]: On master: COMMIT
+[0m20:43:58.144957 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:43:58.145505 [debug] [MainThread]: Connection 'model.fraud_platform.mart_user_risk_profiles' was properly closed.
+[0m20:43:58.145990 [debug] [MainThread]: Connection 'list_delta_bronze' was properly closed.
+[0m20:43:58.146449 [debug] [MainThread]: Connection 'model.fraud_platform.mart_hourly_metrics' was properly closed.
+[0m20:43:58.146975 [debug] [MainThread]: Connection 'model.fraud_platform.mart_fraud_features' was properly closed.
+[0m20:43:58.147571 [info ] [MainThread]: 
+[0m20:43:58.148150 [info ] [MainThread]: Finished running 3 incremental models in 0 hours 0 minutes and 46.50 seconds (46.50s).
+[0m20:43:58.149538 [debug] [MainThread]: Command end result
+[0m20:43:58.165997 [info ] [MainThread]: 
+[0m20:43:58.167433 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:43:58.168492 [info ] [MainThread]: 
+[0m20:43:58.169524 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m20:43:58.171725 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 47.045773, "process_user_time": 3.973086, "process_kernel_time": 0.384105, "process_mem_max_rss": "158944", "process_out_blocks": "2016", "process_in_blocks": "0"}
+[0m20:43:58.173148 [debug] [MainThread]: Command `dbt run` succeeded at 20:43:58.172803 after 47.05 seconds
+[0m20:43:58.174172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7073548450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f706eaee290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707340e150>]}
+[0m20:43:58.175283 [debug] [MainThread]: Flushing usage events
+[0m20:44:04.794845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159e5f5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72115afe10d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159e5d750>]}
+
+
+============================== 20:44:04.802229 | 641e0fcf-67c8-417d-9fc4-6b1b1f803e74 ==============================
+[0m20:44:04.802229 [info ] [MainThread]: Running with dbt=1.7.19
+[0m20:44:04.803057 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/dbt/logs', 'debug': 'False', 'profiles_dir': '/opt/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt test --profiles-dir /opt/dbt --project-dir /opt/dbt', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:44:04.988263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159da0610>]}
+[0m20:44:05.048186 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159bf9210>]}
+[0m20:44:05.049188 [info ] [MainThread]: Registered adapter: trino=1.7.1
+[0m20:44:05.056699 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m20:44:05.082265 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:44:05.082839 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:44:05.089577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159d12210>]}
+[0m20:44:05.108610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159b0be50>]}
+[0m20:44:05.109530 [info ] [MainThread]: Found 6 models, 13 tests, 1 seed, 1 source, 0 exposures, 0 metrics, 422 macros, 0 groups, 0 semantic models
+[0m20:44:05.110056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159c3e150>]}
+[0m20:44:05.113015 [info ] [MainThread]: 
+[0m20:44:05.114027 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m20:44:05.116351 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_intermediate'
+[0m20:44:05.128533 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze'
+[0m20:44:05.135419 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_staging'
+[0m20:44:05.140010 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_intermediate"
+[0m20:44:05.144588 [debug] [ThreadPool]: Using trino connection "list_delta_bronze"
+[0m20:44:05.145916 [debug] [ThreadPool]: Acquiring new trino connection 'list_delta_bronze_marts'
+[0m20:44:05.150671 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_staging"
+[0m20:44:05.151271 [debug] [ThreadPool]: On list_delta_bronze_intermediate: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_intermediate"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_intermediate') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_intermediate'
+[0m20:44:05.151963 [debug] [ThreadPool]: On list_delta_bronze: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+[0m20:44:05.156239 [debug] [ThreadPool]: Using trino connection "list_delta_bronze_marts"
+[0m20:44:05.157159 [debug] [ThreadPool]: On list_delta_bronze_staging: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_staging"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_staging') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_staging'
+[0m20:44:05.157859 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:05.158377 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:05.159075 [debug] [ThreadPool]: On list_delta_bronze_marts: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "connection_name": "list_delta_bronze_marts"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "delta".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'delta'
+              and schema_name = 'bronze_marts') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze_marts'
+[0m20:44:05.159689 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:05.161445 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:05.934124 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:05.936714 [debug] [ThreadPool]: On list_delta_bronze: ROLLBACK
+[0m20:44:05.938132 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:05.938843 [debug] [ThreadPool]: On list_delta_bronze: Close
+[0m20:44:05.943308 [debug] [ThreadPool]: On list_delta_bronze_intermediate: ROLLBACK
+[0m20:44:05.944793 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:05.945973 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:05.947880 [debug] [ThreadPool]: On list_delta_bronze_intermediate: Close
+[0m20:44:05.951146 [debug] [ThreadPool]: On list_delta_bronze_marts: ROLLBACK
+[0m20:44:05.953113 [debug] [ThreadPool]: On list_delta_bronze_staging: ROLLBACK
+[0m20:44:05.955936 [debug] [ThreadPool]: On list_delta_bronze_marts: Close
+[0m20:44:05.956745 [debug] [ThreadPool]: On list_delta_bronze_staging: Close
+[0m20:44:05.962088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '641e0fcf-67c8-417d-9fc4-6b1b1f803e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159e4e1d0>]}
+[0m20:44:05.962924 [debug] [MainThread]: On master: COMMIT
+[0m20:44:05.964012 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:44:05.964775 [info ] [MainThread]: 
+[0m20:44:05.978811 [debug] [Thread-1 (]: Began running node test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2
+[0m20:44:05.979900 [info ] [Thread-1 (]: 1 of 13 START test accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR  [RUN]
+[0m20:44:05.981629 [debug] [Thread-2 (]: Began running node test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda
+[0m20:44:05.983101 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_delta_bronze_staging, now test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2)
+[0m20:44:05.984272 [debug] [Thread-3 (]: Began running node test.fraud_platform.assert_fraud_rate_reasonable
+[0m20:44:05.985674 [debug] [Thread-4 (]: Began running node test.fraud_platform.assert_no_future_events
+[0m20:44:05.986759 [info ] [Thread-2 (]: 2 of 13 START test accepted_values_stg_transactions_device_type__mobile__web__atm__pos  [RUN]
+[0m20:44:05.987845 [debug] [Thread-1 (]: Began compiling node test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2
+[0m20:44:05.988961 [info ] [Thread-3 (]: 3 of 13 START test assert_fraud_rate_reasonable ................................ [RUN]
+[0m20:44:05.989974 [info ] [Thread-4 (]: 4 of 13 START test assert_no_future_events ..................................... [RUN]
+[0m20:44:05.991476 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_delta_bronze_marts, now test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda)
+[0m20:44:06.008481 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_delta_bronze_intermediate, now test.fraud_platform.assert_fraud_rate_reasonable)
+[0m20:44:06.012487 [debug] [Thread-1 (]: Writing injected SQL for node "test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2"
+[0m20:44:06.013915 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_delta_bronze, now test.fraud_platform.assert_no_future_events)
+[0m20:44:06.014879 [debug] [Thread-2 (]: Began compiling node test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda
+[0m20:44:06.015814 [debug] [Thread-3 (]: Began compiling node test.fraud_platform.assert_fraud_rate_reasonable
+[0m20:44:06.017092 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.assert_no_future_events
+[0m20:44:06.023574 [debug] [Thread-1 (]: Timing info for test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2 (compile): 20:44:05.992074 => 20:44:06.023115
+[0m20:44:06.028727 [debug] [Thread-2 (]: Writing injected SQL for node "test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda"
+[0m20:44:06.035374 [debug] [Thread-3 (]: Writing injected SQL for node "test.fraud_platform.assert_fraud_rate_reasonable"
+[0m20:44:06.039486 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.assert_no_future_events"
+[0m20:44:06.040491 [debug] [Thread-1 (]: Began executing node test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2
+[0m20:44:06.058971 [debug] [Thread-3 (]: Timing info for test.fraud_platform.assert_fraud_rate_reasonable (compile): 20:44:06.029336 => 20:44:06.058526
+[0m20:44:06.060161 [debug] [Thread-2 (]: Timing info for test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda (compile): 20:44:06.017866 => 20:44:06.059704
+[0m20:44:06.060903 [debug] [Thread-3 (]: Began executing node test.fraud_platform.assert_fraud_rate_reasonable
+[0m20:44:06.066536 [debug] [Thread-1 (]: Writing runtime sql for node "test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2"
+[0m20:44:06.067402 [debug] [Thread-2 (]: Began executing node test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda
+[0m20:44:06.068343 [debug] [Thread-4 (]: Timing info for test.fraud_platform.assert_no_future_events (compile): 20:44:06.035970 => 20:44:06.067992
+[0m20:44:06.071693 [debug] [Thread-3 (]: Writing runtime sql for node "test.fraud_platform.assert_fraud_rate_reasonable"
+[0m20:44:06.075186 [debug] [Thread-2 (]: Writing runtime sql for node "test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda"
+[0m20:44:06.077764 [debug] [Thread-1 (]: Using trino connection "test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2"
+[0m20:44:06.078533 [debug] [Thread-4 (]: Began executing node test.fraud_platform.assert_no_future_events
+[0m20:44:06.081426 [debug] [Thread-3 (]: Using trino connection "test.fraud_platform.assert_fraud_rate_reasonable"
+[0m20:44:06.084102 [debug] [Thread-2 (]: Using trino connection "test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda"
+[0m20:44:06.084754 [debug] [Thread-1 (]: On test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        currency as value_field,
+        count(*) as n_records
+
+    from "delta"."bronze_staging"."stg_transactions"
+    group by currency
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'USD','NGN','GBP','EUR'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:06.087783 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.assert_no_future_events"
+[0m20:44:06.088616 [debug] [Thread-3 (]: On test.fraud_platform.assert_fraud_rate_reasonable: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.assert_fraud_rate_reasonable"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      -- Fail if any hour has fraud_rate > 50%: signals bad labels or pipeline error.
+-- Returns rows on failure (dbt test passes when 0 rows returned).
+
+select
+    hour_bucket,
+    fraud_rate
+from "delta"."bronze_marts"."mart_hourly_metrics"
+where fraud_rate > 0.50
+      
+    ) dbt_internal_test
+[0m20:44:06.089353 [debug] [Thread-2 (]: On test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        device_type as value_field,
+        count(*) as n_records
+
+    from "delta"."bronze_staging"."stg_transactions"
+    group by device_type
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'mobile','web','atm','pos'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:06.090022 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:44:06.090900 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m20:44:06.091707 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:44:06.093610 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.assert_no_future_events"
+[0m20:44:06.099524 [debug] [Thread-4 (]: On test.fraud_platform.assert_no_future_events: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.assert_no_future_events"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      -- Fail if any transaction has event_at more than 1 hour in the future.
+-- Catches clock skew on producers or corrupted event_time values.
+
+select
+    transaction_id,
+    event_at,
+    current_timestamp as checked_at
+from "delta"."bronze_staging"."stg_transactions"
+where event_at > current_timestamp + interval '1' hour
+      
+    ) dbt_internal_test
+[0m20:44:06.101193 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:44:06.241512 [debug] [Thread-3 (]: SQL status: SUCCESS in 0.0 seconds
+[0m20:44:06.245835 [debug] [Thread-3 (]: Timing info for test.fraud_platform.assert_fraud_rate_reasonable (execute): 20:44:06.068845 => 20:44:06.245297
+[0m20:44:06.246794 [debug] [Thread-3 (]: On test.fraud_platform.assert_fraud_rate_reasonable: ROLLBACK
+[0m20:44:06.247616 [debug] [Thread-3 (]: On test.fraud_platform.assert_fraud_rate_reasonable: Close
+[0m20:44:06.249519 [info ] [Thread-3 (]: 3 of 13 PASS assert_fraud_rate_reasonable ...................................... [[32mPASS[0m in 0.24s]
+[0m20:44:06.250706 [debug] [Thread-3 (]: Finished running node test.fraud_platform.assert_fraud_rate_reasonable
+[0m20:44:06.251631 [debug] [Thread-3 (]: Began running node test.fraud_platform.not_null_stg_transactions_amount.3629b5421e
+[0m20:44:06.252863 [info ] [Thread-3 (]: 5 of 13 START test not_null_stg_transactions_amount ............................ [RUN]
+[0m20:44:06.254375 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.fraud_platform.assert_fraud_rate_reasonable, now test.fraud_platform.not_null_stg_transactions_amount.3629b5421e)
+[0m20:44:06.255229 [debug] [Thread-3 (]: Began compiling node test.fraud_platform.not_null_stg_transactions_amount.3629b5421e
+[0m20:44:06.267599 [debug] [Thread-3 (]: Writing injected SQL for node "test.fraud_platform.not_null_stg_transactions_amount.3629b5421e"
+[0m20:44:06.269224 [debug] [Thread-3 (]: Timing info for test.fraud_platform.not_null_stg_transactions_amount.3629b5421e (compile): 20:44:06.255749 => 20:44:06.268623
+[0m20:44:06.270164 [debug] [Thread-3 (]: Began executing node test.fraud_platform.not_null_stg_transactions_amount.3629b5421e
+[0m20:44:06.274924 [debug] [Thread-3 (]: Writing runtime sql for node "test.fraud_platform.not_null_stg_transactions_amount.3629b5421e"
+[0m20:44:06.277953 [debug] [Thread-3 (]: Using trino connection "test.fraud_platform.not_null_stg_transactions_amount.3629b5421e"
+[0m20:44:06.279000 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_amount.3629b5421e: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.not_null_stg_transactions_amount.3629b5421e"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select amount
+from "delta"."bronze_staging"."stg_transactions"
+where amount is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:06.279915 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m20:44:44.351725 [debug] [Thread-3 (]: SQL status: SUCCESS in 38.0 seconds
+[0m20:44:44.366223 [debug] [Thread-3 (]: Timing info for test.fraud_platform.not_null_stg_transactions_amount.3629b5421e (execute): 20:44:06.270693 => 20:44:44.364890
+[0m20:44:44.368267 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_amount.3629b5421e: ROLLBACK
+[0m20:44:44.369757 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_amount.3629b5421e: Close
+[0m20:44:44.372991 [info ] [Thread-3 (]: 5 of 13 PASS not_null_stg_transactions_amount .................................. [[32mPASS[0m in 38.12s]
+[0m20:44:44.375619 [debug] [Thread-3 (]: Finished running node test.fraud_platform.not_null_stg_transactions_amount.3629b5421e
+[0m20:44:44.379610 [debug] [Thread-3 (]: Began running node test.fraud_platform.not_null_stg_transactions_event_at.91396157fd
+[0m20:44:44.382347 [info ] [Thread-3 (]: 6 of 13 START test not_null_stg_transactions_event_at .......................... [RUN]
+[0m20:44:44.385147 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.fraud_platform.not_null_stg_transactions_amount.3629b5421e, now test.fraud_platform.not_null_stg_transactions_event_at.91396157fd)
+[0m20:44:44.387430 [debug] [Thread-3 (]: Began compiling node test.fraud_platform.not_null_stg_transactions_event_at.91396157fd
+[0m20:44:44.406946 [debug] [Thread-3 (]: Writing injected SQL for node "test.fraud_platform.not_null_stg_transactions_event_at.91396157fd"
+[0m20:44:44.411410 [debug] [Thread-3 (]: Timing info for test.fraud_platform.not_null_stg_transactions_event_at.91396157fd (compile): 20:44:44.388812 => 20:44:44.410099
+[0m20:44:44.413156 [debug] [Thread-3 (]: Began executing node test.fraud_platform.not_null_stg_transactions_event_at.91396157fd
+[0m20:44:44.429716 [debug] [Thread-3 (]: Writing runtime sql for node "test.fraud_platform.not_null_stg_transactions_event_at.91396157fd"
+[0m20:44:44.435330 [debug] [Thread-3 (]: Using trino connection "test.fraud_platform.not_null_stg_transactions_event_at.91396157fd"
+[0m20:44:44.437496 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_event_at.91396157fd: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.not_null_stg_transactions_event_at.91396157fd"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select event_at
+from "delta"."bronze_staging"."stg_transactions"
+where event_at is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:44.439786 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m20:44:45.978865 [debug] [Thread-4 (]: SQL status: SUCCESS in 40.0 seconds
+[0m20:44:45.990215 [debug] [Thread-4 (]: Timing info for test.fraud_platform.assert_no_future_events (execute): 20:44:06.085277 => 20:44:45.989236
+[0m20:44:45.991748 [debug] [Thread-4 (]: On test.fraud_platform.assert_no_future_events: ROLLBACK
+[0m20:44:45.995349 [debug] [Thread-4 (]: On test.fraud_platform.assert_no_future_events: Close
+[0m20:44:46.002816 [info ] [Thread-4 (]: 4 of 13 PASS assert_no_future_events ........................................... [[32mPASS[0m in 39.99s]
+[0m20:44:46.005242 [debug] [Thread-4 (]: Finished running node test.fraud_platform.assert_no_future_events
+[0m20:44:46.011178 [debug] [Thread-4 (]: Began running node test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m20:44:46.012774 [info ] [Thread-4 (]: 7 of 13 START test not_null_stg_transactions_transaction_id .................... [RUN]
+[0m20:44:46.015578 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.fraud_platform.assert_no_future_events, now test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m20:44:46.017142 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m20:44:46.039739 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m20:44:46.047047 [debug] [Thread-4 (]: Timing info for test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4 (compile): 20:44:46.020357 => 20:44:46.046164
+[0m20:44:46.049151 [debug] [Thread-4 (]: Began executing node test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m20:44:46.056797 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m20:44:46.068108 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m20:44:46.074497 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select transaction_id
+from "delta"."bronze_staging"."stg_transactions"
+where transaction_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:46.076369 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:44:46.765399 [debug] [Thread-4 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:46.770623 [debug] [Thread-4 (]: Timing info for test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4 (execute): 20:44:46.050121 => 20:44:46.769667
+[0m20:44:46.772313 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4: ROLLBACK
+[0m20:44:46.773695 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4: Close
+[0m20:44:46.776693 [info ] [Thread-4 (]: 7 of 13 PASS not_null_stg_transactions_transaction_id .......................... [[32mPASS[0m in 0.76s]
+[0m20:44:46.779654 [debug] [Thread-4 (]: Finished running node test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m20:44:46.781290 [debug] [Thread-4 (]: Began running node test.fraud_platform.not_null_stg_transactions_user_id.b541614306
+[0m20:44:46.782708 [info ] [Thread-4 (]: 8 of 13 START test not_null_stg_transactions_user_id ........................... [RUN]
+[0m20:44:46.785432 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.fraud_platform.not_null_stg_transactions_transaction_id.1d00a8e2e4, now test.fraud_platform.not_null_stg_transactions_user_id.b541614306)
+[0m20:44:46.787060 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.not_null_stg_transactions_user_id.b541614306
+[0m20:44:46.802685 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.not_null_stg_transactions_user_id.b541614306"
+[0m20:44:46.805409 [debug] [Thread-4 (]: Timing info for test.fraud_platform.not_null_stg_transactions_user_id.b541614306 (compile): 20:44:46.789689 => 20:44:46.804573
+[0m20:44:46.806896 [debug] [Thread-4 (]: Began executing node test.fraud_platform.not_null_stg_transactions_user_id.b541614306
+[0m20:44:46.817173 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.not_null_stg_transactions_user_id.b541614306"
+[0m20:44:46.823135 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.not_null_stg_transactions_user_id.b541614306"
+[0m20:44:46.824717 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_user_id.b541614306: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.not_null_stg_transactions_user_id.b541614306"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select user_id
+from "delta"."bronze_staging"."stg_transactions"
+where user_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:46.825634 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:44:48.626779 [debug] [Thread-4 (]: SQL status: SUCCESS in 2.0 seconds
+[0m20:44:48.633384 [debug] [Thread-4 (]: Timing info for test.fraud_platform.not_null_stg_transactions_user_id.b541614306 (execute): 20:44:46.807698 => 20:44:48.630880
+[0m20:44:48.634943 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_user_id.b541614306: ROLLBACK
+[0m20:44:48.636310 [debug] [Thread-4 (]: On test.fraud_platform.not_null_stg_transactions_user_id.b541614306: Close
+[0m20:44:48.639468 [info ] [Thread-4 (]: 8 of 13 PASS not_null_stg_transactions_user_id ................................. [[32mPASS[0m in 1.85s]
+[0m20:44:48.643170 [debug] [Thread-4 (]: Finished running node test.fraud_platform.not_null_stg_transactions_user_id.b541614306
+[0m20:44:48.645360 [debug] [Thread-4 (]: Began running node test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6
+[0m20:44:48.647226 [info ] [Thread-4 (]: 9 of 13 START test source_not_null_bronze_transactions_amount .................. [RUN]
+[0m20:44:48.652402 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.fraud_platform.not_null_stg_transactions_user_id.b541614306, now test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6)
+[0m20:44:48.653859 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6
+[0m20:44:48.669885 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6"
+[0m20:44:48.672488 [debug] [Thread-4 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6 (compile): 20:44:48.654773 => 20:44:48.671498
+[0m20:44:48.673931 [debug] [Thread-4 (]: Began executing node test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6
+[0m20:44:48.683110 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6"
+[0m20:44:48.688833 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6"
+[0m20:44:48.690490 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select amount
+from "delta"."bronze"."transactions"
+where amount is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:48.692422 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:44:52.904774 [debug] [Thread-4 (]: SQL status: SUCCESS in 4.0 seconds
+[0m20:44:52.910179 [debug] [Thread-4 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6 (execute): 20:44:48.674859 => 20:44:52.909173
+[0m20:44:52.911741 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6: ROLLBACK
+[0m20:44:52.913454 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6: Close
+[0m20:44:52.917422 [info ] [Thread-4 (]: 9 of 13 PASS source_not_null_bronze_transactions_amount ........................ [[32mPASS[0m in 4.26s]
+[0m20:44:52.920678 [debug] [Thread-4 (]: Finished running node test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6
+[0m20:44:52.922391 [debug] [Thread-4 (]: Began running node test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a
+[0m20:44:52.928797 [info ] [Thread-4 (]: 10 of 13 START test source_not_null_bronze_transactions_event_time ............. [RUN]
+[0m20:44:52.932644 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.fraud_platform.source_not_null_bronze_transactions_amount.7a3b18cef6, now test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a)
+[0m20:44:52.934155 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a
+[0m20:44:52.952189 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a"
+[0m20:44:52.954900 [debug] [Thread-4 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a (compile): 20:44:52.935110 => 20:44:52.953998
+[0m20:44:52.956405 [debug] [Thread-4 (]: Began executing node test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a
+[0m20:44:52.974058 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a"
+[0m20:44:52.979769 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a"
+[0m20:44:52.987329 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select event_time
+from "delta"."bronze"."transactions"
+where event_time is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:52.989480 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:44:54.274283 [debug] [Thread-1 (]: SQL status: SUCCESS in 48.0 seconds
+[0m20:44:54.281251 [debug] [Thread-1 (]: Timing info for test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2 (execute): 20:44:06.042699 => 20:44:54.280156
+[0m20:44:54.283333 [debug] [Thread-1 (]: On test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2: ROLLBACK
+[0m20:44:54.285306 [debug] [Thread-1 (]: On test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2: Close
+[0m20:44:54.289081 [info ] [Thread-1 (]: 1 of 13 PASS accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR ..... [[32mPASS[0m in 48.31s]
+[0m20:44:54.292931 [debug] [Thread-1 (]: Finished running node test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2
+[0m20:44:54.294823 [debug] [Thread-1 (]: Began running node test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e
+[0m20:44:54.297196 [info ] [Thread-1 (]: 11 of 13 START test source_not_null_bronze_transactions_transaction_id ......... [RUN]
+[0m20:44:54.301324 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.fraud_platform.accepted_values_stg_transactions_currency__USD__NGN__GBP__EUR.76dffec9e2, now test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e)
+[0m20:44:54.303236 [debug] [Thread-1 (]: Began compiling node test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e
+[0m20:44:54.317110 [debug] [Thread-1 (]: Writing injected SQL for node "test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e"
+[0m20:44:54.321874 [debug] [Thread-1 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e (compile): 20:44:54.304354 => 20:44:54.320901
+[0m20:44:54.323769 [debug] [Thread-1 (]: Began executing node test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e
+[0m20:44:54.332699 [debug] [Thread-1 (]: Writing runtime sql for node "test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e"
+[0m20:44:54.339620 [debug] [Thread-1 (]: Using trino connection "test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e"
+[0m20:44:54.341619 [debug] [Thread-1 (]: On test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select transaction_id
+from "delta"."bronze"."transactions"
+where transaction_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:54.343369 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:44:55.620930 [debug] [Thread-2 (]: SQL status: SUCCESS in 50.0 seconds
+[0m20:44:55.628670 [debug] [Thread-2 (]: Timing info for test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda (execute): 20:44:06.072570 => 20:44:55.627528
+[0m20:44:55.630409 [debug] [Thread-2 (]: On test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda: ROLLBACK
+[0m20:44:55.631897 [debug] [Thread-2 (]: On test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda: Close
+[0m20:44:55.637742 [info ] [Thread-2 (]: 2 of 13 PASS accepted_values_stg_transactions_device_type__mobile__web__atm__pos  [[32mPASS[0m in 49.65s]
+[0m20:44:55.640178 [debug] [Thread-2 (]: Finished running node test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda
+[0m20:44:55.641735 [debug] [Thread-2 (]: Began running node test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db
+[0m20:44:55.643865 [info ] [Thread-2 (]: 12 of 13 START test source_not_null_bronze_transactions_user_id ................ [RUN]
+[0m20:44:55.646428 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.fraud_platform.accepted_values_stg_transactions_device_type__mobile__web__atm__pos.d9801e5cda, now test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db)
+[0m20:44:55.647872 [debug] [Thread-2 (]: Began compiling node test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db
+[0m20:44:55.675652 [debug] [Thread-2 (]: Writing injected SQL for node "test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db"
+[0m20:44:55.679349 [debug] [Thread-2 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db (compile): 20:44:55.649218 => 20:44:55.678317
+[0m20:44:55.681339 [debug] [Thread-2 (]: Began executing node test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db
+[0m20:44:55.811135 [debug] [Thread-2 (]: Writing runtime sql for node "test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db"
+[0m20:44:55.824812 [debug] [Thread-2 (]: Using trino connection "test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db"
+[0m20:44:55.826681 [debug] [Thread-2 (]: On test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select user_id
+from "delta"."bronze"."transactions"
+where user_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:55.828186 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:44:57.232667 [debug] [Thread-4 (]: SQL status: SUCCESS in 4.0 seconds
+[0m20:44:57.238353 [debug] [Thread-4 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a (execute): 20:44:52.957338 => 20:44:57.237121
+[0m20:44:57.240944 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a: ROLLBACK
+[0m20:44:57.243376 [debug] [Thread-2 (]: SQL status: SUCCESS in 1.0 seconds
+[0m20:44:57.244915 [debug] [Thread-4 (]: On test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a: Close
+[0m20:44:57.250300 [debug] [Thread-2 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db (execute): 20:44:55.682502 => 20:44:57.249480
+[0m20:44:57.256270 [debug] [Thread-2 (]: On test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db: ROLLBACK
+[0m20:44:57.263658 [debug] [Thread-2 (]: On test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db: Close
+[0m20:44:57.253772 [info ] [Thread-4 (]: 10 of 13 PASS source_not_null_bronze_transactions_event_time ................... [[32mPASS[0m in 4.32s]
+[0m20:44:57.267077 [info ] [Thread-2 (]: 12 of 13 PASS source_not_null_bronze_transactions_user_id ...................... [[32mPASS[0m in 1.62s]
+[0m20:44:57.272180 [debug] [Thread-4 (]: Finished running node test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a
+[0m20:44:57.276142 [debug] [Thread-4 (]: Began running node test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396
+[0m20:44:57.274507 [debug] [Thread-2 (]: Finished running node test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db
+[0m20:44:57.277779 [info ] [Thread-4 (]: 13 of 13 START test unique_stg_transactions_transaction_id ..................... [RUN]
+[0m20:44:57.285315 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.fraud_platform.source_not_null_bronze_transactions_event_time.38add59d3a, now test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m20:44:57.286970 [debug] [Thread-4 (]: Began compiling node test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396
+[0m20:44:57.317923 [debug] [Thread-1 (]: SQL status: SUCCESS in 3.0 seconds
+[0m20:44:57.323207 [debug] [Thread-4 (]: Writing injected SQL for node "test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m20:44:57.332950 [debug] [Thread-1 (]: Timing info for test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e (execute): 20:44:54.325040 => 20:44:57.331771
+[0m20:44:57.335828 [debug] [Thread-1 (]: On test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e: ROLLBACK
+[0m20:44:57.337613 [debug] [Thread-4 (]: Timing info for test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396 (compile): 20:44:57.295154 => 20:44:57.336855
+[0m20:44:57.339156 [debug] [Thread-1 (]: On test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e: Close
+[0m20:44:57.340566 [debug] [Thread-4 (]: Began executing node test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396
+[0m20:44:57.345632 [info ] [Thread-1 (]: 11 of 13 PASS source_not_null_bronze_transactions_transaction_id ............... [[32mPASS[0m in 3.05s]
+[0m20:44:57.355413 [debug] [Thread-1 (]: Finished running node test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e
+[0m20:44:57.354061 [debug] [Thread-4 (]: Writing runtime sql for node "test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m20:44:57.360854 [debug] [Thread-4 (]: Using trino connection "test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m20:44:57.362112 [debug] [Thread-4 (]: On test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "fraud_platform", "target_name": "dev", "node_id": "test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    transaction_id as unique_field,
+    count(*) as n_records
+
+from "delta"."bronze_staging"."stg_transactions"
+where transaction_id is not null
+group by transaction_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m20:44:57.363846 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m20:45:11.199252 [debug] [Thread-3 (]: SQL status: SUCCESS in 27.0 seconds
+[0m20:45:11.206895 [debug] [Thread-3 (]: Timing info for test.fraud_platform.not_null_stg_transactions_event_at.91396157fd (execute): 20:44:44.414112 => 20:45:11.205854
+[0m20:45:11.208627 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_event_at.91396157fd: ROLLBACK
+[0m20:45:11.210189 [debug] [Thread-3 (]: On test.fraud_platform.not_null_stg_transactions_event_at.91396157fd: Close
+[0m20:45:11.215854 [info ] [Thread-3 (]: 6 of 13 PASS not_null_stg_transactions_event_at ................................ [[32mPASS[0m in 26.83s]
+[0m20:45:11.219121 [debug] [Thread-3 (]: Finished running node test.fraud_platform.not_null_stg_transactions_event_at.91396157fd
+[0m20:45:29.080007 [debug] [Thread-4 (]: SQL status: SUCCESS in 32.0 seconds
+[0m20:45:29.084510 [debug] [Thread-4 (]: Timing info for test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396 (execute): 20:44:57.346538 => 20:45:29.083873
+[0m20:45:29.085506 [debug] [Thread-4 (]: On test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396: ROLLBACK
+[0m20:45:29.086421 [debug] [Thread-4 (]: On test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396: Close
+[0m20:45:29.088792 [info ] [Thread-4 (]: 13 of 13 PASS unique_stg_transactions_transaction_id ........................... [[32mPASS[0m in 31.80s]
+[0m20:45:29.090746 [debug] [Thread-4 (]: Finished running node test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396
+[0m20:45:29.097437 [debug] [MainThread]: On master: COMMIT
+[0m20:45:29.099339 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:45:29.100272 [debug] [MainThread]: Connection 'test.fraud_platform.not_null_stg_transactions_event_at.91396157fd' was properly closed.
+[0m20:45:29.101089 [debug] [MainThread]: Connection 'test.fraud_platform.unique_stg_transactions_transaction_id.ee9a78a396' was properly closed.
+[0m20:45:29.101969 [debug] [MainThread]: Connection 'test.fraud_platform.source_not_null_bronze_transactions_transaction_id.2cf7d6fa1e' was properly closed.
+[0m20:45:29.102990 [debug] [MainThread]: Connection 'test.fraud_platform.source_not_null_bronze_transactions_user_id.eaabd635db' was properly closed.
+[0m20:45:29.103961 [info ] [MainThread]: 
+[0m20:45:29.104878 [info ] [MainThread]: Finished running 13 tests in 0 hours 1 minutes and 23.99 seconds (83.99s).
+[0m20:45:29.111728 [debug] [MainThread]: Command end result
+[0m20:45:29.139209 [info ] [MainThread]: 
+[0m20:45:29.140760 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:45:29.141997 [info ] [MainThread]: 
+[0m20:45:29.143280 [info ] [MainThread]: Done. PASS=13 WARN=0 ERROR=0 SKIP=0 TOTAL=13
+[0m20:45:29.145960 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 84.400566, "process_user_time": 5.204451, "process_kernel_time": 0.459333, "process_mem_max_rss": "159080", "process_out_blocks": "2248", "process_in_blocks": "0"}
+[0m20:45:29.147271 [debug] [MainThread]: Command `dbt test` succeeded at 20:45:29.146971 after 84.40 seconds
+[0m20:45:29.148109 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x721159e67950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72115e4fb990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72115e38a210>]}
+[0m20:45:29.149432 [debug] [MainThread]: Flushing usage events

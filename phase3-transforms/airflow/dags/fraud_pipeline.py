@@ -9,7 +9,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 
 DBT_DIR = "/opt/dbt"
-DBT_CMD = f"dbt --profiles-dir {DBT_DIR} --project-dir {DBT_DIR}"
+DBT_CMD = f"--profiles-dir {DBT_DIR} --project-dir {DBT_DIR}"
 
 default_args = {
     "owner": "analytics-eng",
@@ -51,27 +51,27 @@ print(f'Bronze fresh: last write {age} ago', flush=True)
 
     dbt_seed = BashOperator(
         task_id="dbt_seed",
-        bash_command=f"{DBT_CMD} seed",
+        bash_command=f"dbt seed {DBT_CMD}",
     )
 
     dbt_staging = BashOperator(
         task_id="dbt_staging",
-        bash_command=f"{DBT_CMD} run --select staging",
+        bash_command=f"dbt run --select staging {DBT_CMD}",
     )
 
     dbt_intermediate = BashOperator(
         task_id="dbt_intermediate",
-        bash_command=f"{DBT_CMD} run --select intermediate",
+        bash_command=f"dbt run --select intermediate {DBT_CMD}",
     )
 
     dbt_marts = BashOperator(
         task_id="dbt_marts",
-        bash_command=f"{DBT_CMD} run --select marts",
+        bash_command=f"dbt run --select marts {DBT_CMD}",
     )
 
     dbt_test = BashOperator(
         task_id="dbt_test",
-        bash_command=f"{DBT_CMD} test",
+        bash_command=f"dbt test {DBT_CMD}",
     )
 
     (
