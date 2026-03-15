@@ -15,12 +15,12 @@ with enriched as (
 
 hourly as (
     select
-        date_trunc('hour', event_at)                        as hour_bucket,
-        count(*)                                            as tx_count,
-        sum(amount)                                         as total_amount,
-        avg(amount)                                         as avg_amount,
-        count(distinct user_id)                             as unique_users,
-        count(distinct merchant_id)                         as unique_merchants,
+        date_trunc('hour', event_at)  as hour_bucket,
+        count(*) as tx_count,
+        sum(amount) as total_amount,
+        avg(amount) as avg_amount,
+        count(distinct user_id) as unique_users,
+        count(distinct merchant_id) as unique_merchants,
         sum(case when is_international then 1 else 0 end)   as intl_count,
         sum(case when amount_risk_tier = 'high' then 1 else 0 end) as high_risk_count,
         -- fraud_rate placeholder: populated once labels table exists

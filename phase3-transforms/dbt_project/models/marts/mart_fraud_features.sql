@@ -27,5 +27,5 @@ select
     intl_tx_count_30d,
     high_amount_count_30d,
     last_tx_at,
-    current_timestamp                   as feature_updated_at
+    current_timestamp  as feature_updated_at
 from velocity
