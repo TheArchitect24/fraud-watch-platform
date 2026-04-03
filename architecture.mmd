@@ -1,0 +1,29 @@
+graph TD
+  A[Python Producer\nAvro transactions @ TPS] --> B[Kafka: transactions.raw]
+  A -->|bad messages| DLQ[Kafka: transactions.dlq]
+
+  B --> C[Spark Structured Streaming\nmicro-batch every 10s]
+  C -->|quality checks pass| D[Delta Lake Bronze\nParquet on MinIO]
+  C -->|quality checks fail| DLQ
+
+  D --> E[Airflow DAG\nevery 15 min]
+
+  subgraph dbt_transforms [dbt via Trino]
+    E --> F[Silver: stg_transactions\nint_transactions_enriched]
+    F --> G[Gold: mart_fraud_features\nmart_hourly_metrics\nmart_user_risk]
+  end
+
+  G --> H[feature_writer.py\nAirflow step]
+  H --> I[Redis Feature Store\nuser_features per user_id]
+
+  G --> J[train.py\nweekly]
+  J --> K[MLflow Model Registry\nRandomForest in Production]
+
+  I --> L[FastAPI /predict]
+  K --> L
+
+  L --> M[Predictions Log\nPostgreSQL]
+  L --> N[Prometheus /metrics]
+
+  N --> O[Grafana\nPipeline Health + ML Monitoring]
+  G --> P[Apache Superset\nBusiness Analytics via Trino]

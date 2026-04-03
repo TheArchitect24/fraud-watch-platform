@@ -1,0 +1,21 @@
+{
+  "stack": [
+    "Apache Kafka",
+    "Confluent Schema Registry",
+    "Apache Spark",
+    "Delta Lake",
+    "MinIO",
+    "Trino",
+    "dbt",
+    "Apache Airflow",
+    "MLflow",
+    "Redis",
+    "FastAPI",
+    "Prometheus",
+    "Grafana",
+    "Apache Superset",
+    "PostgreSQL",
+    "Python",
+    "Docker"
+  ]
+}
