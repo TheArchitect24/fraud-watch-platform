@@ -71,6 +71,58 @@ Grafana alerts are defined on observable symptoms: DLQ count > 0 (data quality i
 
 ---
 
+## Scalability Analysis — Current Limits & What Changes at Scale
+
+The current deployment runs on a single Docker Compose host. This is intentional for a portfolio project, but it's worth being precise about where the ceilings are and exactly what changes to break through them.
+
+### Current Throughput Ceiling per Component
+
+| Component | Current Config | Realistic Ceiling |
+|---|---|---|
+| Kafka | 1 broker, 10 partitions | ~5k–10k TPS with tuning |
+| Spark | 1 worker, 2 cores, 2 GB RAM | ~500–1000 TPS before consumer lag builds |
+| FastAPI | 1 instance, single process | ~200–500 req/sec |
+| MinIO | Single node | I/O bound at sustained high write volume |
+| Redis | Single node | 100k+ ops/sec — not the bottleneck |
+
+**Spark is the immediate bottleneck.** At 7000 TPS steady state it will fall behind Kafka within minutes. At 65000 TPS peak, it collapses.
+
+### What Changes for 7000 TPS Steady / 65000 TPS Peak
+
+**Kafka**
+- 3+ brokers with replication factor 3
+- 30–50 partitions on `transactions.raw` to parallelise consumption
+- Producer tuning: increase `batch.size` and `linger.ms` to reduce broker round trips
+
+**Spark**
+- 4–6 workers minimum at 7000 TPS; 12–20 workers for 65000 TPS peak
+- 8–16 cores and 8 GB+ RAM per worker
+- Reduce trigger interval from 10s → 2–5s to maintain low end-to-end latency
+- Tune `maxOffsetsPerTrigger` to match sustained ingest rate without lag accumulation
+
+**FastAPI Scoring**
+- Horizontal scaling behind a load balancer (Nginx or Traefik)
+- 4–8 replicas handle 7000 req/sec; 16+ for 65000 TPS burst
+- Already async-native via uvicorn — scaling is purely horizontal, no code changes
+
+**MinIO**
+- Distributed mode (4+ nodes) for high-throughput writes
+- At genuine production scale, replace MinIO with managed S3 — operational overhead disappears
+
+**What does not need to change**
+- Redis — already handles 100k+ ops/sec on a single node
+- dbt / Airflow — batch layer, not in the hot ingestion path
+- Kafka's Avro schema patterns — schema enforcement scales with brokers, not partitions
+- The FastAPI application code — stateless by design, scales purely through replication
+
+### The Architecture vs The Deployment
+
+The critical distinction: the **architecture** is designed for horizontal scale. Kafka partitioning, Spark worker parallelism, and stateless FastAPI replicas mean throughput scales with infrastructure, not code changes. The Docker Compose deployment is a single-node instantiation of a horizontally scalable design — not a fundamentally different architecture.
+
+Moving from this deployment to production scale is an infrastructure change (more brokers, more workers, a load balancer) not an architectural rewrite.
+
+---
+
 ## Extensions & Real-World Use Cases
 
 ### ML & Modelling
